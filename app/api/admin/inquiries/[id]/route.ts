@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
-import { sql } from '@vercel/postgres'
 
 const prisma = new PrismaClient()
 
@@ -9,19 +8,23 @@ export async function PATCH(
   { params }: { params: { id: string } }
 ) {
   try {
-    const { status } = await request.json()
     const id = parseInt(params.id)
+    const { status } = await request.json()
 
-    const inquiry = await prisma.inquiry.update({
-      where: { id },
-      data: { status },
+    await prisma.inquiry.update({
+      where: {
+        id: id
+      },
+      data: {
+        status: status
+      }
     })
 
-    return NextResponse.json(inquiry)
+    return NextResponse.json({ message: '상태가 업데이트되었습니다.' })
   } catch (error) {
     console.error('Error updating inquiry:', error)
     return NextResponse.json(
-      { message: '문의 상태를 업데이트하는 중 오류가 발생했습니다.' },
+      { error: '상태 업데이트 중 오류가 발생했습니다.' },
       { status: 500 }
     )
   }
