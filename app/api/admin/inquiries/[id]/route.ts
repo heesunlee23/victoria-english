@@ -1,17 +1,17 @@
-import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
+import { NextRequest, NextResponse } from 'next/server'
 
-const prisma = new PrismaClient()
+export const dynamic = 'force-dynamic'
+export const runtime = 'nodejs'
 
 export async function PATCH(
-  request: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   return NextResponse.json({ message: 'PATCH endpoint' })
 }
 
 export async function DELETE(
-  request: Request,
+  req: NextRequest,
   { params }: { params: { id: string } }
 ) {
   return NextResponse.json({ message: 'DELETE endpoint' })
