@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server'
-import prisma from '@/lib/prisma'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
 
 export async function PATCH(
   request: Request,
@@ -7,18 +9,29 @@ export async function PATCH(
 ) {
   try {
     const id = parseInt(params.id)
-    const { status } = await request.json()
+    if (isNaN(id)) {
+      return NextResponse.json(
+        { error: '유효하지 않은 ID입니다.' },
+        { status: 400 }
+      )
+    }
 
-    await prisma.inquiry.update({
-      where: {
-        id: id
-      },
-      data: {
-        status: status
-      }
+    const body = await request.json()
+    const { status } = body
+
+    if (!status) {
+      return NextResponse.json(
+        { error: '상태 값이 필요합니다.' },
+        { status: 400 }
+      )
+    }
+
+    const updatedInquiry = await prisma.inquiry.update({
+      where: { id },
+      data: { status }
     })
 
-    return NextResponse.json({ message: '상태가 업데이트되었습니다.' })
+    return NextResponse.json(updatedInquiry)
   } catch (error) {
     console.error('Error updating inquiry:', error)
     return NextResponse.json(
@@ -34,14 +47,18 @@ export async function DELETE(
 ) {
   try {
     const id = parseInt(params.id)
+    if (isNaN(id)) {
+      return NextResponse.json(
+        { error: '유효하지 않은 ID입니다.' },
+        { status: 400 }
+      )
+    }
 
     await prisma.inquiry.delete({
-      where: {
-        id: id
-      }
+      where: { id }
     })
 
-    return NextResponse.json({ message: '문의가 삭제되었습니다.' })
+    return NextResponse.json({ success: true })
   } catch (error) {
     console.error('Error deleting inquiry:', error)
     return NextResponse.json(
