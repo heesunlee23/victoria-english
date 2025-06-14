@@ -70,6 +70,19 @@ const programs = [
   },
 ]
 
+const notices = [
+  {
+    title: '빅토리아영어학원 신규 파닉스 수업 개강',
+    description: '수업시간/정원/대상 안내',
+    link: 'https://blog.naver.com/victoriaenglish/223871728176',
+  },
+  {
+    title: '고려대말하기대회 전원입상 축하합니다',
+    description: '학생들의 성과를 축하합니다',
+    link: 'https://blog.naver.com/victoriaenglish/223894572355',
+  },
+]
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-yellow-50">
@@ -106,6 +119,58 @@ export default function Home() {
               무료 상담 신청하기
             </Link>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Notice Section */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-8"
+          >
+            <h2 className="text-3xl font-bold mb-4">공지사항</h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {notices.map((notice, index) => (
+              <motion.div
+                key={notice.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-yellow-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+              >
+                <h3 className="text-xl font-semibold mb-2">{notice.title}</h3>
+                <p className="text-gray-600 mb-4">{notice.description}</p>
+                <a
+                  href={notice.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-600 font-semibold hover:text-yellow-700 inline-flex items-center"
+                >
+                  자세히 보기
+                  <svg
+                    className="w-4 h-4 ml-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -16,21 +16,21 @@ const teachers = [
     role: '전임 강사',
     description: '영어교육 관련 자격증 다수 보유한 미국 유학 경험자로, 재미있고 효과적인 영어 교육을 제공합니다.',
     image: '/images/teachers/bella.jpg',
-    specialties: ['영어 원서 교육육', '영어 작문 교육', '영어 말하기 교육']
+    specialties: ['영어 원서 교육', '영어 작문 교육', '영어 말하기 교육']
   },
   {
     name: 'Kevin',
     role: '전임 강사',
     description: '다년간의 영어교육 경험을 보유한 전문 강사로, 학생들의 영어 실력 향상을 위한 체계적인 지도를 제공합니다.',
     image: '/images/teachers/kevin.png',
-    specialties: ['영어 문법 교육', '영어 독해 교육', '파닉스']
+    specialties: ['영어 문법 교육', '영어 독해 교육', '중고등 내신지도']
   },
   {
-    name: 'Chloe',
+    name: 'Hailey',
     role: '전임 강사',
     description: '대형 어학원에서 다년간 근무한 베테랑 강사로, 학생들의 부족한 부분을 집중적으로 지도합니다.',
     image: '/images/teachers/jenny.png',
-    specialties: ['중고등 내신지도', '영어 독해 교육', '영어 작문 교육']
+    specialties: ['파닉스', '영어 독해 교육', '영어 작문 교육']
   }
 ]
 

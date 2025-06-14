@@ -9,8 +9,7 @@ const navigation = [
   { name: '홈', href: '/' },
   { name: '학원소개', href: '/about' },
   { name: '프로그램', href: '/programs' },
-  { name: '강사소개', href: '/teachers' },
-  { name: '공지사항', href: '/blog' }
+  { name: '강사소개', href: '/teachers' }
 ]
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
