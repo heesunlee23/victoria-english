@@ -1,18 +1,22 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
-export const dynamic = 'force-dynamic'
-export const runtime = 'nodejs'
-
-export async function PATCH(
-  req: NextRequest,
+export async function GET(
+  request: Request,
   { params }: { params: { id: string } }
 ) {
-  return NextResponse.json({ message: 'PATCH endpoint' })
+  return NextResponse.json({ id: params.id })
+}
+
+export async function PATCH(
+  request: Request,
+  { params }: { params: { id: string } }
+) {
+  return NextResponse.json({ id: params.id })
 }
 
 export async function DELETE(
-  req: NextRequest,
+  request: Request,
   { params }: { params: { id: string } }
 ) {
-  return NextResponse.json({ message: 'DELETE endpoint' })
+  return NextResponse.json({ id: params.id })
 } 

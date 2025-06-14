@@ -15,7 +15,7 @@ const categories = [
 const posts = [
   {
     id: 1,
-    title: '2024년 여름방학 특별 프로그램 안내',
+    title: '2025년 여름방학 특별 프로그램 안내',
     category: 'notice',
     date: '2024-06-15',
     image: '/images/blog/summer-program.jpg',
@@ -31,11 +31,11 @@ const posts = [
   },
   {
     id: 3,
-    title: '신규 원어민 선생님 합류',
+    title: '신규 선생님 합류',
     category: 'news',
     date: '2024-06-05',
     image: '/images/blog/new-teacher.jpg',
-    excerpt: '미국 출신의 새로운 원어민 선생님이 합류했습니다. 더욱 풍부해진 영어 교육을 경험해보세요.'
+    excerpt: '새로운 합류했습니다. 더욱 풍부해진 영어 교육을 경험해보세요.'
   },
   {
     id: 4,

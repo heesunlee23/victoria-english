@@ -62,11 +62,11 @@ const posts = [
   },
   {
     id: 3,
-    title: '신규 원어민 선생님 합류',
+    title: '신규 선생님 합류',
     category: 'news',
     date: '2024-06-05',
     image: '/images/blog/new-teacher.jpg',
-    content: `미국 출신의 새로운 원어민 선생님이 합류했습니다.
+    content: `새로운 생님이 합류했습니다.
 
 1. 선생님 소개
 - 이름: Sarah Johnson
