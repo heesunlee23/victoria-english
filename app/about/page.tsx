@@ -37,7 +37,7 @@ const features = [
 const stats = [
   { label: '누적 학생 수', value: '100+' },
   { label: '전문 강사', value: '4명' },
-  { label: '평균 수업 만족도', value: '98%' }, // 원장님과 상의 필요
+  { label: '재등록율', value: '95% 이상' }, 
   { label: '운영 연수', value: '2년+' }
 ]
 
